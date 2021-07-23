@@ -1,0 +1,7 @@
+apiVersion: v2
+description: Jenkins helm chart
+name: jenkins
+version: 1.0.0
+appVersion: 1.0.0
+sources:
+  - https://github.com/mercurial963/jenkins.git
