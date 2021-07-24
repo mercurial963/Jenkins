@@ -14,4 +14,4 @@ kubectl --namespace dev port-forward svc/jenkins 8000:8000 &
 ```
 access using localhost:8000
 [here](http://localhost:8000)
-[here](www.google.co.th)
+[here](https://www.google.com)
