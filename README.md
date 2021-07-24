@@ -7,9 +7,11 @@ Once kubernetes and helm is set up properly, run as follows
 helm install jenkins helm/
 ```
 #### Access Jenkins
-forward port and access using localhost:8000
+forward port 
 ```console
 kubectl --namespace dev port-forward svc/jenkins 8000:8000 &
-[localhost:8000](localhost:8000)
+
 ```
-[localhost:8000](localhost:8000)
+access using localhost:8000
+[here](http://localhost:8000)
+[here](www.google.co.th)
