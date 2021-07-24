@@ -10,5 +10,5 @@ helm install jenkins helm/
 forward port and access using localhost:8000
 ```console
 kubectl --namespace dev port-forward svc/jenkins 8000:8000 &
-[localhost:8000]localhost:8000
+[localhost:8000](localhost:8000)
 ```
