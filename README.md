@@ -8,7 +8,7 @@ helm install jenkins helm/
 ```
 #### Forward port
 ```console
-kubectl --namespace dev port-forward svc/jenkins 8000:8000 &
+kubectl port-forward svc/jenkins 8000:8000 &
 
 ```
 #### Open Jenkins
