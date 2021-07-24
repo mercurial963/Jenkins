@@ -6,12 +6,12 @@ Once kubernetes and helm is set up properly, run as follows
 ```console
 helm install jenkins helm/
 ```
-#### Access Jenkins
-forward port 
+#### Forward port
 ```console
 kubectl --namespace dev port-forward svc/jenkins 8000:8000 &
 
 ```
-access using localhost:8000
+#### Open Jenkins
 [here](http://localhost:8000)
-[here](https://www.google.com)
+
+
