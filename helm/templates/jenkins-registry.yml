@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: registry-jenkins
-  namespace: dev
-type: kubernetes.io/dockerconfigjson
-data:
-  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJnaGNyLmlvIjogewoJCQkiYXV0aCI6ICJiV1Z5WTNWeWFXRnNPVFl6T21kb2NGOU5kbEJ4WXpGSVVFZFlOMWRtUjFaQk1VMVhUSFF5Ukhad2NqRlBhV1UwVjJsaVZuRT0iCgkJfQoJfQp9
-  ## from encoding config.json to base64 (Command : base64 ~/.docker/config.json)

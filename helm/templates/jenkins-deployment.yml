@@ -12,6 +12,7 @@ spec:
       labels:
         app: jenkins
     spec:
+      serviceAccountName: jenkins
       containers:
         - name: jenkins
           image: ghcr.io/mercurial963/jenkins:latest
@@ -21,13 +22,18 @@ spec:
               value: -Djenkins.install.runSetupWizard=false
           ports:
             - name: http-port
-              containerPort: 8000
+              containerPort: 8080
             - name: jnlp-port
               containerPort: 50000
           volumeMounts:
-            - name: jenkins-home
+            # - mountPath: /var/jenkins_home
+            #   name: jenkins-pv-storage
+            - name: jenkins-home # use "jenkins-home"(refer from name and emptyDir) if not use persistent volume
               mountPath: /var/jenkins_home
-      volumes:
+      volumes: 
+        # - name: jenkins-pv-storage
+        #   persistentVolumeClaim:
+        #     claimName: jenkins-pv-claim
         - name: jenkins-home
           emptyDir: {}
       imagePullSecrets:
