@@ -11,4 +11,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/software/data/jenkinshome"
+    path: "/tmp/jenkins-home"

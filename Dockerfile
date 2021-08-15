@@ -8,11 +8,18 @@ RUN jenkins-plugin-cli --plugins git
 RUN jenkins-plugin-cli --plugins ssh-agent
 RUN jenkins-plugin-cli --plugins git-parameter
 RUN jenkins-plugin-cli --plugins multibranch-scan-webhook-trigger
+# RUN jenkins-plugin-cli --plugins sonar 
+RUN jenkins-plugin-cli --plugins git-parameter
+RUN jenkins-plugin-cli --plugins anchore-container-scanner
+RUN jenkins-plugin-cli --plugins dependency-check-jenkins-plugin
+
+
+
 
 # install Notifications and Publishing plugins
-RUN jenkins-plugin-cli --plugins email-ext
-RUN jenkins-plugin-cli --plugins mailer
-RUN jenkins-plugin-cli --plugins slack
+# RUN jenkins-plugin-cli --plugins email-ext
+# RUN jenkins-plugin-cli --plugins mailer
+# RUN jenkins-plugin-cli --plugins slack
 
 
 # Artifacts

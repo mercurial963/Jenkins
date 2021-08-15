@@ -13,6 +13,9 @@ spec:
         app: jenkins
     spec:
       serviceAccountName: jenkins
+      securityContext:
+        fsGroup: 1000 
+        runAsUser: 0
       containers:
         - name: jenkins
           image: ghcr.io/mercurial963/jenkins:latest
@@ -28,13 +31,16 @@ spec:
           volumeMounts:
             # - mountPath: /var/jenkins_home
             #   name: jenkins-pv-storage
-            - name: jenkins-home # use "jenkins-home"(refer from name and emptyDir) if not use persistent volume
-              mountPath: /var/jenkins_home
+            - mountPath: /var/jenkins_home
+              name: jenkins-home # use "jenkins-home"(refer from name and emptyDir) if not use persistent volume
+
       volumes: 
         # - name: jenkins-pv-storage
         #   persistentVolumeClaim:
         #     claimName: jenkins-pv-claim
         - name: jenkins-home
-          emptyDir: {}
+          hostPath:
+            path: /tmp/jenkins-home
+          # emptyDir: {}
       imagePullSecrets:
       - name: registry-jenkins
